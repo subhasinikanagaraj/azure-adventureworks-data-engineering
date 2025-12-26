@@ -32,5 +32,4 @@ Reporting (Power BI / Dashboards / Insights)
 
 ---
 
-## 📂 Repository Structure
 
