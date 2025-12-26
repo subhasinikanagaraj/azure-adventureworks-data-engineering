@@ -1,0 +1,30 @@
+{
+    "name": "ds_dynamic_github",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "httpgithublinkedservice",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "p_git_relURL": {
+                "type": "String"
+            }
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "HttpServerLocation",
+                "relativeUrl": {
+                    "value": "@dataset().p_git_relURL",
+                    "type": "Expression"
+                }
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    }
+}
