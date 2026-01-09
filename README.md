@@ -7,7 +7,8 @@ The source data is the AdventureWorks dataset hosted on GitHub. The pipeline ing
 - Azure Data Factory (ADF) – ingestion  
 - Azure Data Lake Storage Gen2 (ADLS) – storage layers  
 - Azure Databricks (PySpark) – transformation  
-- Azure Synapse Analytics – gold layer modeling & analytics  
+- Azure Synapse Analytics – gold layer modeling & analytics
+- Tableau - repoting / visualization
 - GitHub – version control & documentation  
 
 This project is designed to showcase real‑world data engineering skills suitable for production‑grade pipelines.
@@ -28,8 +29,39 @@ Azure Databricks – Gold Layer (Curated Business Tables)
         ↓  
 Azure Synapse Analytics (Analytics & Modeling)  
         ↓  
-Reporting (Power BI / Dashboards / Insights)
+Reporting (Tableau / Dashboards / Insights)
 
 ---
 
+### Bronze Layer – Ingestion (ADF)
 
+- Ingested raw CSV files from GitHub
+- Stored raw data in Bronze container in ADLS
+- ADF pipeline includes linked services, datasets, and copy activities
+
+**Repo Files**: adf/
+
+### Silver Layer – Transformation (Databricks)
+
+- Cleaned and transformed raw data using PySpark
+- Stored processed data in Silver container
+
+**Repo Files**: databricks/
+
+### Gold Layer – Modeling (Synapse)
+
+- Queried Silver data using OPENROWSET
+- Created analytical Gold views for reporting
+- Modeled fact and dimension views
+
+**Repo Files**: synapse/
+
+### Tableau Dashboard
+
+Built an interactive dashboard using Gold views, including:
+
+- KPI cards (Sales, Profit, Margin, AOV)
+- Trend charts (Sales, Profit, Order Quantity)
+- Breakdown Analysis (ProductCategory, Region, Products)
+
+**Repo Files**: tableau/  
