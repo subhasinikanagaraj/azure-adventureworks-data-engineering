@@ -46,7 +46,7 @@ Reporting (Tableau / Dashboards / Insights)
 - Cleaned and transformed raw data using PySpark
 - Stored processed data in Silver container
 
-**Repo Files**: databricks/
+**Repo Files**: Databricks/
 
 ### Gold Layer – Modeling (Synapse)
 
@@ -64,4 +64,4 @@ Built an interactive dashboard using Gold views, including:
 - Trend charts (Sales, Profit, Order Quantity)
 - Breakdown Analysis (ProductCategory, Region, Products)
 
-**Repo Files**: tableau/  
+**Repo Files**: Tableau/  
