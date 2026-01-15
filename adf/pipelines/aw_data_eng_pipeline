@@ -1,0 +1,51 @@
+{
+    "name": "aw_data_eng_pipeline",
+    "properties": {
+        "activities": [
+            {
+                "name": "GittoBronze",
+                "type": "ExecutePipeline",
+                "dependsOn": [],
+                "policy": {
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "pipeline": {
+                        "referenceName": "dynamicGitToBronze",
+                        "type": "PipelineReference"
+                    },
+                    "waitOnCompletion": true
+                }
+            },
+            {
+                "name": "BronzeToSilver",
+                "type": "DatabricksNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "GittoBronze",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "notebookPath": "/aw_project/BronzeToSilver"
+                },
+                "linkedServiceName": {
+                    "referenceName": "ls_db",
+                    "type": "LinkedServiceReference"
+                }
+            }
+        ],
+        "annotations": []
+    }
+}
