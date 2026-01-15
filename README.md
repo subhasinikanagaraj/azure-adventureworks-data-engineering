@@ -44,7 +44,7 @@ Reporting (Tableau / Dashboards / Insights)
 ### Silver Layer – Transformation (Databricks)
 
 - Cleaned and transformed raw data using PySpark
-- Stored processed data in Silver container
+- Stored processed data in Parquet format in Silver container
 
 **Repo Files**: Databricks/
 
